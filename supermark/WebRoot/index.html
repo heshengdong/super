@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+ <head>
+  <title>超市管理系统后台界面</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+   <link href="../assets/css/dpl-min.css" rel="stylesheet" type="text/css" />
+  <link href="../assets/css/bui-min.css" rel="stylesheet" type="text/css" />
+   <link href="../assets/css/main-min.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+
+  <div class="header">
+    
+      <div class="dl-title">
+          <span class="lp-title-port">超市</span><span class="dl-title-text">管理</span>
+        </a>
+      </div>
+
+    <div class="dl-log">欢迎您，<span class="dl-log-user"></span><a href="../login.html" title="退出系统" class="dl-log-quit">[退出]</a>
+    </div>
+  </div>
+    <ul id="J_NavContent" class="dl-tab-conten">
+
+    </ul>
+   </div>
+  <script type="text/javascript" src="../assets/js/jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" src="../assets/js/bui.js"></script>
+  <script type="text/javascript" src="../assets/js/config.js"></script>
+
+  <script>
+    BUI.use('common/main',function(){
+      var config = [{
+          id:'menu', 
+          homePage : 'addUser',
+          menu:[{
+              text:'用户管理',
+              items:[
+                {id:'addUser',text:'增加用户',href:'../main/addUser.jsp',closeable : false},
+                {id:'deleteUser',text:'删除用户',href:'../main/deleteUser.jsp'},
+                {id:'searchUser',text:'查询用户',href:'../main/searchUser.jsp'},
+                {id:'changePassword',text:'修改密码',href:'../main/changePassword.jsp'}
+              ]
+            },{
+              text:'商品信息管理',
+              items:[
+                {id:'addType',text:'添加商品信息',href:'../main/addType.jsp'},
+                {id:'change',text:'操作商品信息',href:'../main/deleteType.jsp'}
+              ]
+            },{
+              text:'进货/退货管理',
+              items:[
+                {id:'addStock',text:'添加进货',href:'../main/addStock.jsp'},
+                {id:'deleteStock',text:'查看进货',href:'../main/deleteStock.jsp'},
+                {id:'deleteUnStock',text:'查看退货',href:'../main/lookTuiHuo.jsp'},
+              ]
+            },{
+                text:'超市商品管理',
+                items:[
+                  {id:'operation',text:'销售商品',href:'../main/sellStock.jsp'},
+                  {id:'operation',text:'销售商品统计',href:'../main/operateSellStock.jsp'},
+                  {id:'operation',text:'销售退货统计',href:'../main/operateTuiHuoStock.jsp'}
+                ]
+              },{
+                  text:'库存管理',
+                  items:[
+                    {id:'operation',text:'商品管理',href:'../main/stockManager.jsp'}
+                  ]
+                },]
+          }];
+      new PageUtil.MainPage({
+        modulesConfig : config
+      });
+    });
+  </script>
+ </body>
+</html>
